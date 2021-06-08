@@ -13,40 +13,44 @@ import javax.validation.constraints.Size;
 public class usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long _id;
 	
 	@NotNull
 	@Size(min = 2, max = 100)
-	private String nome;
+	private String _nome;
+	
 	@NotNull
 	@Size(min = 6, max = 100)
-	private String senha;
+	private String _senha;
+	
 	@NotNull
 	@Size(min = 6, max = 100)
-	private String usuario;
+	private String _usuario;
+	
+	
 	public long getId() {
-		return id;
+		return _id;
 	}
 	public void setId(long id) {
-		this.id = id;
+		this._id = id;
 	}
 	public String getNome() {
-		return nome;
+		return _nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this._nome = nome;
 	}
 	public String getSenha() {
-		return senha;
+		return _senha;
 	}
 	public void setSenha(String senha) {
-		this.senha = senha;
+		this._senha = senha;
 	}
 	public String getUsuario() {
-		return usuario;
+		return _usuario;
 	}
 	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+		this._usuario = usuario;
 	}
 	
 

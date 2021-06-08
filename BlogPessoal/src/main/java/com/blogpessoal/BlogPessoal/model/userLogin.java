@@ -2,35 +2,36 @@ package com.blogpessoal.BlogPessoal.model;
 
 
 
-public class usuarioLogin {
+public class userLogin {
 	
-	private String nome;
-	private String usuario;
-	private String senha;
-	private String token;
+	private String _nome;
+	private String _usuario;
+	private String _senha;
+	private String _token;
+	
 	public String getNome() {
-		return nome;
+		return _nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this._nome = nome;
 	}
 	public String getUsuario() {
-		return usuario;
+		return _usuario;
 	}
 	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+		this._usuario = usuario;
 	}
 	public String getSenha() {
-		return senha;
+		return _senha;
 	}
 	public void setSenha(String senha) {
-		this.senha = senha;
+		this._senha = senha;
 	}
 	public String getToken() {
-		return token;
+		return _token;
 	}
 	public void setToken(String token) {
-		this.token = token;
+		this._token = token;
 	}
 
 	

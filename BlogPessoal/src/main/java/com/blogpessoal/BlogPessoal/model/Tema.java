@@ -2,7 +2,7 @@ package com.blogpessoal.BlogPessoal.model;
 
 import java.util.List;
 
-import javax.annotation.Generated;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,33 +21,32 @@ public class Tema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long _id;
 	
 	@NotNull
-	private String descricao;
+	private String _descricao;
 	
-	@OneToMany(mappedBy = "tema", cascade =  CascadeType.ALL)
-	@JsonIgnoreProperties("tema")
-	private List<Postagem> postagem;
+	@OneToMany(mappedBy = "_tema", cascade =  CascadeType.ALL)
+	@JsonIgnoreProperties("_tema")
+	private List<Postagem> _postagem;
+	
+	
 	public long getId() {
-		return id;
+		return _id;
 	}
 	public void setId(long id) {
-		this.id = id;
+		this._id = id;
 	}
 	public String getDescricao() {
-		return descricao;
+		return _descricao;
 	}
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		this._descricao = descricao;
 	}
 	public List<Postagem> getPostagem() {
-		return postagem;
+		return _postagem;
 	}
 	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
+		this._postagem = postagem;
 	}
-	
-	
-	
 }

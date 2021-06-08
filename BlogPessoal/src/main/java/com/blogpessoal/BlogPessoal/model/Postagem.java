@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -21,60 +21,60 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long _id;
 
 	@NotNull
 	@Size(min = 5, max = 100)
-	private String titulo;
+	private String _titulo;
 
 	@NotNull
 	@Size(min = 5, max = 550)
-	private String text;
+	private String _text;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	private Date _data = new java.sql.Date(System.currentTimeMillis());
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
-	private Tema tema;
+	@JsonIgnoreProperties("_postagem")
+	private Tema _tema;
 
 	public Tema getTema() {
-		return tema;
+		return _tema;
 	}
 
 	public void setTema(Tema tema) {
-		this.tema = tema;
+		this._tema = tema;
 	}
 
 	public long getId() {
-		return id;
+		return _id;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this._id = id;
 	}
 
 	public String getTitulo() {
-		return titulo;
+		return _titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this._titulo = titulo;
 	}
 
 	public String getText() {
-		return text;
+		return _text;
 	}
 
 	public void setText(String text) {
-		this.text = text;
+		this._text = text;
 	}
 
 	public Date getData() {
-		return data;
+		return _data;
 	}
 
 	public void setData(Date data) {
-		this.data = data;
+		this._data = data;
 	}
 
 }

@@ -2,7 +2,7 @@ package com.blogpessoal.BlogPessoal.controller;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,39 +25,39 @@ import com.blogpessoal.BlogPessoal.repository.PostagemRepository;
 public class PostagemController {
 	
 	@Autowired
-	private PostagemRepository repositoty;
+	private PostagemRepository _repositoty;
 	
 	@GetMapping
 	public ResponseEntity<List<Postagem>> GetAll(){
-		return ResponseEntity.ok(repositoty.findAll());
+		return ResponseEntity.ok(_repositoty.findAll());
 	}
 	
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Postagem> Sacana(@PathVariable long id){
-		return repositoty.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Postagem> Sacana(@PathVariable long _id){
+		return _repositoty.findById(_id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 		
 	}
 	
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo){
-		return ResponseEntity.ok(repositoty.findAllByTituloContainingIgnoreCase(titulo));
+		return ResponseEntity.ok(_repositoty.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post (@RequestBody Postagem postagem ){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repositoty.save(postagem));
+		return ResponseEntity.status(HttpStatus.CREATED).body(_repositoty.save(postagem));
 		
 	}
 	
 	@PutMapping
 	public ResponseEntity<Postagem> put (@RequestBody Postagem postagem ){
-		return ResponseEntity.status(HttpStatus.OK).body(repositoty.save(postagem));
+		return ResponseEntity.status(HttpStatus.OK).body(_repositoty.save(postagem));
 	}
 	
 	@DeleteMapping("/{id}")
-	public void  delete(@PathVariable long id ) {
-		repositoty.deleteById(id);
+	public void  delete(@PathVariable long _id ) {
+		_repositoty.deleteById(_id);
 	}
 	
 	/*@DeleteMapping("/{id}")
